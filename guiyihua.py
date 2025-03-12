@@ -31,7 +31,10 @@ class ObeDtwCalculator:
                 min_cost = min(float(cum_matrix[i - 1, j]),
                                float(cum_matrix[i - 1, max(j - 1, 0)]),
                                float(cum_matrix[i - 1, max(j - 2, 0)]))
-                cum_matrix[i, j] = cost + min_cost
+
+                # 归一化：除以路径长度或其平方根
+                normalization_factor = i  # 使用路径长度的平方根作为示例
+                cum_matrix[i, j] = (cost + min_cost) / normalization_factor
 
         best_end_point_index = np.argmin(cum_matrix[-1, :])
         return best_end_point_index
