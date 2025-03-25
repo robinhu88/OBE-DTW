@@ -130,28 +130,10 @@ def calculate_cumulative_distances(xy_coordinates):
 
 
 if __name__ == "__main__":
-    map_file = r'C:\Users\Administrator\Desktop\data100Hz\map155531.txt'
+    map_file = r''
     test_files = [
 
-        r'C:\Users\Administrator\Desktop\data10Hz\10hzdata153344.txt',
-        r'C:\Users\Administrator\Desktop\data10Hz\10hzdata154324.txt',
-        r'C:\Users\Administrator\Desktop\data10Hz\10hzdata161152.txt',
-        r'C:\Users\Administrator\Desktop\data10Hz\10hzdata162030.txt',
-        r'C:\Users\Administrator\Desktop\data10Hz\10hzdata163356.txt',
-        r'C:\Users\Administrator\Desktop\data10Hz\10hzdata164715.txt',
-        r'C:\Users\Administrator\Desktop\data10Hz\10hzdata165807.txt',
-        r'C:\Users\Administrator\Desktop\data10Hz\10hzdata171421.txt',
-        r'C:\Users\Administrator\Desktop\data10Hz\10hzdata172624.txt'
-        # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata153344.txt',
-        # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata154324.txt',
-        # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata155531.txt',
-        # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata161152.txt',
-        # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata162030.txt',
-        # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata163356.txt',
-        # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata164715.txt',
-        # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata165807.txt',
-        # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata171421.txt',
-        # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata172624.txt'
+     
     ]
 
     # 读取基准地图文件
@@ -229,33 +211,4 @@ if __name__ == "__main__":
 
     print(f"Total MAE: {total_avg_mae:.4f}, Total 67% Error: {total_error67:.4f}")
 
-#test_files = [
-    # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata153344.txt',
-    # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata154324.txt',
-    # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata161152.txt'
-    # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata162030.txt',
-    # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata163356.txt',
-    # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata164715.txt',
-    # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata165807.txt',
-    # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata171421.txt',
-    # r'C:\Users\Administrator\Desktop\data100Hz\100hzdata172624.txt'
-    # r'C:\Users\Administrator\Desktop\data10Hz\10hzdata153344.txt',
-    # r'C:\Users\Administrator\Desktop\data10Hz\10hzdata154324.txt',
-    # r'C:\Users\Administrator\Desktop\data10Hz\10hzdata161152.txt',
-    # r'C:\Users\Administrator\Desktop\data10Hz\10hzdata155531.txt',
-    # r'C:\Users\Administrator\Desktop\data10Hz\10hzdata162030.txt',
-    # r'C:\Users\Administrator\Desktop\data10Hz\10hzdata163356.txt',
-    # r'C:\Users\Administrator\Desktop\data10Hz\10hzdata164715.txt',
-    # r'C:\Users\Administrator\Desktop\data10Hz\10hzdata165807.txt',
-    # r'C:\Users\Administrator\Desktop\data10Hz\10hzdata171421.txt',
-    # r'C:\Users\Administrator\Desktop\data10Hz\10hzdata172624.txt'
-    # r'C:\Users\Administrator\Desktop\data1Hz\data153344.txt',
-    # r'C:\Users\Administrator\Desktop\data1Hz\data154324.txt',
-    # r'C:\Users\Administrator\Desktop\data1Hz\data161152.txt',
-    # r'C:\Users\Administrator\Desktop\data1Hz\data162030.txt',
-    # r'C:\Users\Administrator\Desktop\data1Hz\data163356.txt',
-    # r'C:\Users\Administrator\Desktop\data1Hz\data164715.txt',
-    # r'C:\Users\Administrator\Desktop\data1Hz\data165807.txt',
-    # r'C:\Users\Administrator\Desktop\data1Hz\data171421.txt',
-    # r'C:\Users\Administrator\Desktop\data1Hz\data172624.txt'
-#]
+
