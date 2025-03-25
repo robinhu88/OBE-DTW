@@ -22,10 +22,47 @@ def read_data(file_path):
 
     xy_coords = np.array([item[1:3] for item in parsed_data])  # 只提取xy坐标
 
+    mag_coords1 = np.array([item[3] for item in parsed_data[:2000]])
+    mag_coords2 = np.array([item[4] for item in parsed_data[:2000]])
+    mag_coords3 = np.array([item[5] for item in parsed_data[:2000]])
+
+    # 创建一个包含三个子图的图形
+    fig, axs = plt.subplots(3, 1, figsize=(10, 15))
+
+    # 绘制第一个磁坐标通道
+    axs[0].plot(mag_coords1, color='b', label='Mag Coord 1')
+    axs[0].set_title('Magnetic Coordinate 1')
+    axs[0].set_xlabel('Sample Index')
+    axs[0].set_ylabel('Value')
+    axs[0].legend()
+    axs[0].grid(True)
+
+    # 绘制第二个磁坐标通道
+    axs[1].plot(mag_coords2, color='g', label='Mag Coord 2')
+    axs[1].set_title('Magnetic Coordinate 2')
+    axs[1].set_xlabel('Sample Index')
+    axs[1].set_ylabel('Value')
+    axs[1].legend()
+    axs[1].grid(True)
+
+    # 绘制第三个磁坐标通道
+    axs[2].plot(mag_coords3, color='r', label='Mag Coord 3')
+    axs[2].set_title('Magnetic Coordinate 3')
+    axs[2].set_xlabel('Sample Index')
+    axs[2].set_ylabel('Value')
+    axs[2].legend()
+    axs[2].grid(True)
+
+    # 调整子图之间的间距
+    plt.tight_layout()
+
+    # 显示图形
+    plt.show()
+
     return xy_coords
 
 
-def calculate_distances_and_find_first_decrease_after_10(points, start, max_points=200):
+def calculate_distances_and_find_first_decrease_after_10(points, start, max_points=20000):
     distances = []
     first_decrease_index = None
     previous_distance = float('inf')
@@ -70,20 +107,32 @@ def plot_distances(distances_list, title="", output_dir="."):
 
 if __name__ == "__main__":
     map_file = r'C:\Users\Administrator\Desktop\data\2map155531.txt'
+    # test_files = [
+    #     r'C:\Users\Administrator\Desktop\data\data153344.txt',
+    #     r'C:\Users\Administrator\Desktop\data\data154324.txt',
+    #     r'C:\Users\Administrator\Desktop\data\data161152.txt',
+    #     r'C:\Users\Administrator\Desktop\data\data162030.txt',
+    #     r'C:\Users\Administrator\Desktop\data\data163356.txt',
+    #     r'C:\Users\Administrator\Desktop\data\data164715.txt',
+    #     r'C:\Users\Administrator\Desktop\data\data165807.txt',
+    #     r'C:\Users\Administrator\Desktop\data\data171421.txt',
+    #     r'C:\Users\Administrator\Desktop\data\data172624.txt'
+    # ]
     test_files = [
-        r'C:\Users\Administrator\Desktop\data\data153344.txt',
-        r'C:\Users\Administrator\Desktop\data\data154324.txt',
-        r'C:\Users\Administrator\Desktop\data\data161152.txt',
-        r'C:\Users\Administrator\Desktop\data\data162030.txt',
-        r'C:\Users\Administrator\Desktop\data\data163356.txt',
-        r'C:\Users\Administrator\Desktop\data\data164715.txt',
-        r'C:\Users\Administrator\Desktop\data\data165807.txt',
-        r'C:\Users\Administrator\Desktop\data\data171421.txt',
-        r'C:\Users\Administrator\Desktop\data\data172624.txt'
+        r'C:\Users\Administrator\Desktop\data100Hz\100hzdata153344.txt',
+        r'C:\Users\Administrator\Desktop\data100Hz\100hzdata154324.txt',
+        r'C:\Users\Administrator\Desktop\data100Hz\100hzdata161152.txt',
+        r'C:\Users\Administrator\Desktop\data100Hz\100hzdata155531.txt',
+        r'C:\Users\Administrator\Desktop\data100Hz\100hzdata162030.txt',
+        r'C:\Users\Administrator\Desktop\data100Hz\100hzdata163356.txt',
+        r'C:\Users\Administrator\Desktop\data100Hz\100hzdata164715.txt',
+        r'C:\Users\Administrator\Desktop\data100Hz\100hzdata165807.txt',
+        r'C:\Users\Administrator\Desktop\data100Hz\100hzdata171421.txt',
+        r'C:\Users\Administrator\Desktop\data100Hz\100hzdata172624.txt'
     ]
 
-    step_starts = [0, 49, 99, 149, 199]  # 起始点索引
-    max_points = 200  # 每次计算的最大点数
+    step_starts = [0, 49, 99, 149, 199, 200, 250]  # 起始点索引
+    max_points = 20000  # 每次计算的最大点数
 
     for test_file in test_files:
         xy_coords = read_data(test_file)
